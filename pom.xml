@@ -1,4 +1,7 @@
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -12,14 +15,26 @@
     <groupId>com.example.docker</groupId>
     <artifactId>spring-boot-docker</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <name>spring-boot-docker</name>
+    <description>Spring Boot Docker Demo</description>
+
+    <properties>
+        <java.version>11</java.version>
+    </properties>
 
     <dependencies>
 
-        <!-- Your Spring dependencies -->
-
+        <!-- Spring Boot Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Testing -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
@@ -27,11 +42,13 @@
     <build>
         <plugins>
 
+            <!-- Spring Boot Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
+            <!-- Resources Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
